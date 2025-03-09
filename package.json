@@ -1,0 +1,17 @@
+{
+  "name": "ai-code-review-tool",
+  "version": "1.0.0",
+  "description": "AI-Based Code Review Tool using Node.js, Express, OpenAI API, MongoDB, and JWT Authentication",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.2",
+    "openai": "^3.2.1"
+  }
+}
