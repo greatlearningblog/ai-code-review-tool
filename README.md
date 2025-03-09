@@ -42,5 +42,4 @@ The AI-Based Code Review Tool enables developers to automatically analyze their 
    git clone https://github.com/yourusername/ai-code-review-tool.git
    cd ai-code-review-tool
 
-**View Other such Node.js Projects:** https://www.mygreatlearning.com/blog/top-node-js-projects/
-
+View other such [Node.js Projects](https://www.mygreatlearning.com/blog/top-node-js-projects/)
