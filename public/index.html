@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AI Code Review Tool</title>
+</head>
+<body>
+    <h1>AI Code Review Tool</h1>
+    <h2>Submit Code for Review</h2>
+    <form id="reviewForm">
+        <textarea id="code" rows="10" cols="50" placeholder="Paste your code here..."></textarea><br>
+        <button type="submit">Submit for Review</button>
+    </form>
+    <h2>Review Report</h2>
+    <pre id="reviewReport"></pre>
+
+    <script>
+        document.getElementById('reviewForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const code = document.getElementById('code').value;
+            // For demonstration, prompt the user to enter their JWT token.
+            const token = prompt("Enter your JWT token for authentication:");
+            const response = await fetch('/review', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + token
+                },
+                body: JSON.stringify({ code })
+            });
+            const data = await response.json();
+            if (response.ok) {
+                document.getElementById('reviewReport').textContent = data.reviewReport;
+            } else {
+                document.getElementById('reviewReport').textContent = data.message || data.error;
+            }
+        });
+    </script>
+</body>
+</html>
